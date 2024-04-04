@@ -5,27 +5,34 @@ const box = document.querySelector(".name");
 const NumberGroup = document.querySelector(".group");
 
 function getName(message) {
-    return prompt(message);
+    let input = prompt(message);
+    if (input !== null) { 
+        return input; 
+    } else {
+        return 'Название команды';
+    }
 }
+
 function getNumberGroup(message) {
-    return prompt(message);
+    let input = prompt(message); 
+    if (input !== null) { 
+        return input; 
+    } else {
+        return 'Номер группы'; 
+    }
 }
 
-let resultName = getName('Введите название команды');
-NameCom.textContent = resultName;
-
-let resultGroup = getNumberGroup('Введите номер группы');
-NumberGroup.textContent = resultGroup;
+NameCom.textContent = getName('Введите название команды');
+NumberGroup.textContent = getNumberGroup('Введите номер группы');
 
 box.addEventListener('click', () => {
-    let resultName = getName('Введите название команды');
-    NameCom.textContent = resultName;
+    NameCom.textContent = getName('Введите название команды');
 });
 
 NumberGroup.addEventListener('click', () => {
-    let resultGroup = getNumberGroup('Введите номер группы');
-    NumberGroup.textContent = resultGroup;
+    NumberGroup.textContent = getNumberGroup('Введите номер группы');
 });
+
 
 GetRoad.forEach((event) => {
     event.addEventListener('click', () => {
